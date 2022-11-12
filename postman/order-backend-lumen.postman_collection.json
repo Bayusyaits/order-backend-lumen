@@ -1,0 +1,725 @@
+{
+	"info": {
+		"_postman_id": "a5abf222-9395-4fa2-b3cd-9e6079ed3cf2",
+		"name": "order-backend-lumen",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11919364"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "id",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "bayusyaits",
+									"description": "varchar",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password8",
+									"description": "varchar/ string",
+									"type": "text"
+								},
+								{
+									"key": "fullName",
+									"value": "Bayu Syaits",
+									"description": "char",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8003/v1/user/registration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"v1",
+								"user",
+								"registration"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Signature",
+								"value": "{{authRefreshSignature}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "id",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "bayusyaits",
+									"description": "username & email",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password8",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8003/v1/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"v1",
+								"user",
+								"login"
+							]
+						},
+						"description": "login user fo"
+					},
+					"response": []
+				},
+				{
+					"name": "Add Client",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Signature",
+								"value": "{{authRefreshSignature}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "id",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "halo@agenlaku.com",
+									"description": "varchar",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "halo",
+									"description": "varchar",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password8",
+									"description": "varchar/ string",
+									"type": "text"
+								},
+								{
+									"key": "firstName",
+									"value": "halo",
+									"description": "char",
+									"type": "text"
+								},
+								{
+									"key": "lastName",
+									"value": "agenlaku",
+									"description": "char",
+									"type": "text"
+								},
+								{
+									"key": "salutation",
+									"value": "Mr",
+									"description": "enum(Mr,Ms,Mrs)",
+									"type": "text"
+								},
+								{
+									"key": "agreePrivacy",
+									"value": "1",
+									"description": "boolean",
+									"type": "text"
+								},
+								{
+									"key": "agreeSubscribe",
+									"value": "1",
+									"description": "boolean",
+									"type": "text"
+								},
+								{
+									"key": "phoneNumber",
+									"value": "087764841511",
+									"description": "integer",
+									"type": "text"
+								},
+								{
+									"key": "mobilePrefix",
+									"value": "1",
+									"description": "integer",
+									"type": "text"
+								},
+								{
+									"key": "flag",
+									"value": "1",
+									"description": "frontoffice",
+									"type": "text"
+								},
+								{
+									"key": "agreeTerms",
+									"value": "1",
+									"description": "0 or 1",
+									"type": "text"
+								},
+								{
+									"key": "registeredBy",
+									"value": "web-app",
+									"description": "google, facebook, mobile-app, web-app",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8003/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Client",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Auth-Signature",
+								"value": "{{authRefreshSignature}}",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "id",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "admin@agenlaku.com",
+									"description": "username & email",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Password8",
+									"type": "text"
+								},
+								{
+									"key": "rememberMe",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "flag",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "clientKey",
+									"value": "{{clientKey}}",
+									"description": "firebase fcm client key",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8003/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"v1",
+								"product"
+							]
+						},
+						"description": "login user fo"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsb2NhbGhvc3Q6ODAwMyIsInN1YiI6eyJpZCI6MSwiZnVsbE5hbWUiOiJCYXl1IFN5YWl0cyIsInVzZXJuYW1lIjoiYmF5dXN5YWl0cyIsInRva2VuIjoiR1J0UE5VSEtZQWNXbEZsYlhoVlh6UGJOZkNIYnl6TUYiLCJwYXNzd29yZCI6IiQyeSQxMCRBTlhVWE1SSllrckZvWmhXS2tFWkJlZi5GVUlqVFBsV0RDVE9HREVNM3lPdTNlNmtnc2JZaSIsInRpbWUiOjE2NjgxMzczNTUsImV4cGlyZWQiOjE2NjgyMjM3NTUsImNsaWVudElkIjoxLCJzaWduYXR1cmUiOiJKV0RQSlFBOFRHQjdBVFFUSkg4Rk9ENDBKRDVGOFgxUyJ9LCJpYXQiOjE2NjgxMzczNTUsImV4cCI6MTY2ODIyMzc1NX0.2p40PEnhUoWkRhb2XnGKGB0vnKdlG8gwubz1-4c6lU4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Content-Type header generated by Postman.",
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Signature",
+								"value": "JWDPJQA8TGB7ATQTJH8FOD40JD5F8X1S",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "value",
+									"value": "[\n    {\n        \"code\": \"111111\",\n        \"minOrder\": 1,\n        \"stock\": 200,\n        \"name\": \"Indomie Goreng Rasa Ayam\",\n        \"price\": 3500,\n        \"weight\": 40\n    },\n    {\n        \"code\": \"111112\",\n        \"minOrder\": 1,\n        \"stock\": 200,\n        \"name\": \"Indomie Kuah Ayam Bawang\",\n        \"price\": 2900,\n        \"weight\": 40\n    },\n    {\n        \"code\": \"111113\",\n        \"minOrder\": 1,\n        \"stock\": 200,\n        \"name\": \"Indomie Kuah Ayam Spesial\",\n        \"price\": 3000,\n        \"weight\": 40\n    },\n    {\n        \"code\": \"111114\",\n        \"minOrder\": 1,\n        \"stock\": 300,\n        \"name\": \"Telur Ayam Negeri\",\n        \"price\": 1500,\n        \"weight\": 10\n    },\n    {\n        \"code\": \"111115\",\n        \"minOrder\": 1,\n        \"stock\": 400,\n        \"name\": \"Telur Ayam Kampung\",\n        \"price\": 1900,\n        \"weight\": 10\n    },\n    {\n        \"code\": \"111116\",\n        \"minOrder\": 1,\n        \"stock\": 100,\n        \"name\": \"Dua Belibis Saus Sambal Cabai Botol 530ml\",\n        \"price\": 25000,\n        \"weight\": 500\n    },\n    {\n        \"code\": \"111117\",\n        \"minOrder\": 1,\n        \"stock\": 100,\n        \"name\": \"Bango Kecap Manis Pouch 520ml\",\n        \"price\": 15000,\n        \"weight\": 500\n    },\n    {\n        \"code\": \"111118\",\n        \"minOrder\": 1,\n        \"stock\": 200,\n        \"name\": \"La Fonte Saus Pasta Bolognese Daging 315g\",\n        \"price\": 19000,\n        \"weight\": 320\n    }\n    \n]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8003/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"v1",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsb2NhbGhvc3Q6ODAwMyIsInN1YiI6eyJpZCI6MSwiZnVsbE5hbWUiOiJCYXl1IFN5YWl0cyIsInVzZXJuYW1lIjoiYmF5dXN5YWl0cyIsInRva2VuIjoiR1J0UE5VSEtZQWNXbEZsYlhoVlh6UGJOZkNIYnl6TUYiLCJwYXNzd29yZCI6IiQyeSQxMCRBTlhVWE1SSllrckZvWmhXS2tFWkJlZi5GVUlqVFBsV0RDVE9HREVNM3lPdTNlNmtnc2JZaSIsInRpbWUiOjE2NjgxMzczNTUsImV4cGlyZWQiOjE2NjgyMjM3NTUsImNsaWVudElkIjoxLCJzaWduYXR1cmUiOiJKV0RQSlFBOFRHQjdBVFFUSkg4Rk9ENDBKRDVGOFgxUyJ9LCJpYXQiOjE2NjgxMzczNTUsImV4cCI6MTY2ODIyMzc1NX0.2p40PEnhUoWkRhb2XnGKGB0vnKdlG8gwubz1-4c6lU4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Signature",
+								"value": "JWDPJQA8TGB7ATQTJH8FOD40JD5F8X1S",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "value",
+									"value": "{\n        \"code\": \"111111\",\n        \"minOrder\": 1,\n        \"stock\": 250,\n        \"name\": \"Indomie Goreng Rasa Ayam\",\n        \"price\": 3500,\n        \"weight\": 40\n    }",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8003/v1/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"v1",
+								"product"
+							]
+						},
+						"description": "login user fo"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsb2NhbGhvc3Q6ODAwMyIsInN1YiI6eyJpZCI6MSwiZnVsbE5hbWUiOiJCYXl1IFN5YWl0cyIsInVzZXJuYW1lIjoiYmF5dXN5YWl0cyIsInRva2VuIjoiR1J0UE5VSEtZQWNXbEZsYlhoVlh6UGJOZkNIYnl6TUYiLCJwYXNzd29yZCI6IiQyeSQxMCRBTlhVWE1SSllrckZvWmhXS2tFWkJlZi5GVUlqVFBsV0RDVE9HREVNM3lPdTNlNmtnc2JZaSIsInRpbWUiOjE2NjgxMzczNTUsImV4cGlyZWQiOjE2NjgyMjM3NTUsImNsaWVudElkIjoxLCJzaWduYXR1cmUiOiJKV0RQSlFBOFRHQjdBVFFUSkg4Rk9ENDBKRDVGOFgxUyJ9LCJpYXQiOjE2NjgxMzczNTUsImV4cCI6MTY2ODIyMzc1NX0.2p40PEnhUoWkRhb2XnGKGB0vnKdlG8gwubz1-4c6lU4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Signature",
+								"value": "JWDPJQA8TGB7ATQTJH8FOD40JD5F8X1S",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8003/v1/product?sortBy=id&search=indomie&get=all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"v1",
+								"product"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "6",
+									"disabled": true
+								},
+								{
+									"key": "currentPage",
+									"value": "0",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "id"
+								},
+								{
+									"key": "search",
+									"value": "indomie"
+								},
+								{
+									"key": "get",
+									"value": "all"
+								}
+							]
+						},
+						"description": "login user fo"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsb2NhbGhvc3Q6ODAwMyIsInN1YiI6eyJpZCI6MSwiZnVsbE5hbWUiOiJCYXl1IFN5YWl0cyIsInVzZXJuYW1lIjoiYmF5dXN5YWl0cyIsInRva2VuIjoicEZoenV0b3VvREJCY2tpWEtCS21wckRwUVlxSnVxVXYiLCJwYXNzd29yZCI6IiQyeSQxMCRBTlhVWE1SSllrckZvWmhXS2tFWkJlZi5GVUlqVFBsV0RDVE9HREVNM3lPdTNlNmtnc2JZaSIsInRpbWUiOjE2NjgxMzY2MzIsImV4cGlyZWQiOjE2NjgyMjMwMzIsInNpZ25hdHVyZSI6IkpXRFBKUUE4VEdCN0FUUVRKSDhGT0Q0MEpENUY4WDFTIn0sImlhdCI6MTY2ODEzNjYzMiwiZXhwIjoxNjY4MjIzMDMyfQ.bnt7jqwb8PW8KNLK7yjGDB4Yrwhx4ccsJAzk4RPec3Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							},
+							{
+								"key": "Access-Control-Allow-Origin",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Signature",
+								"value": "JWDPJQA8TGB7ATQTJH8FOD40JD5F8X1S",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "value",
+									"value": "{\n    \"number\": \"18119911\",\n    \"customerName\": \"Bayu\",\n    \"totalCharge\": 100000,\n    \"totalWeight\":1000,\n    \"totalQty\":10,\n    \"transactionDate\": \"2022-11-11 10:29:25\",\n    \"items\": [\n        {\n            \"productCode\": \"111111\",\n            \"orderId\": 1,\n            \"paymentMethod\": \"pas\",\n            \"totalQty\": 2,\n            \"total\": 100000,\n            \"totalWeight\":1000,\n            \"state\":\"done\"\n        },\n        {\n            \"productCode\": \"111112\",\n            \"orderId\": 1,\n            \"paymentMethod\": \"pas\",\n            \"totalQty\": 3,\n            \"total\": 200000,\n            \"totalWeight\":3000,\n            \"state\":\"done\"\n        }\n    ]\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8003/v1/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"v1",
+								"order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsb2NhbGhvc3Q6ODAwMyIsInN1YiI6eyJpZCI6MSwiZnVsbE5hbWUiOiJCYXl1IFN5YWl0cyIsInVzZXJuYW1lIjoiYmF5dXN5YWl0cyIsInRva2VuIjoiR1J0UE5VSEtZQWNXbEZsYlhoVlh6UGJOZkNIYnl6TUYiLCJwYXNzd29yZCI6IiQyeSQxMCRBTlhVWE1SSllrckZvWmhXS2tFWkJlZi5GVUlqVFBsV0RDVE9HREVNM3lPdTNlNmtnc2JZaSIsInRpbWUiOjE2NjgxMzczNTUsImV4cGlyZWQiOjE2NjgyMjM3NTUsImNsaWVudElkIjoxLCJzaWduYXR1cmUiOiJKV0RQSlFBOFRHQjdBVFFUSkg4Rk9ENDBKRDVGOFgxUyJ9LCJpYXQiOjE2NjgxMzczNTUsImV4cCI6MTY2ODIyMzc1NX0.2p40PEnhUoWkRhb2XnGKGB0vnKdlG8gwubz1-4c6lU4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Signature",
+								"value": "JWDPJQA8TGB7ATQTJH8FOD40JD5F8X1S",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "value",
+									"value": "{\n    \"number\": \"18119911\",\n    \"customerName\": \"Bayu\",\n    \"totalCharge\": 100000,\n    \"totalWeight\":1000,\n    \"totalQty\":10,\n    \"transactionDate\": \"2022-11-11 10:29:25\",\n    \"items\": [\n        {\n            \"productCode\": \"111111\",\n            \"orderId\": 1,\n            \"paymentMethod\": \"pas\",\n            \"totalQty\": 2,\n            \"total\": 100000,\n            \"totalWeight\":1000,\n            \"state\":\"done\"\n        },\n        {\n            \"productCode\": \"111112\",\n            \"orderId\": 1,\n            \"paymentMethod\": \"pas\",\n            \"totalQty\": 3,\n            \"total\": 200000,\n            \"totalWeight\":3000,\n            \"state\":\"done\"\n        }\n    ]\n}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8003/v1/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"v1",
+								"order"
+							]
+						},
+						"description": "login user fo"
+					},
+					"response": []
+				},
+				{
+					"name": "Get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJsb2NhbGhvc3Q6ODAwMyIsInN1YiI6eyJpZCI6MSwiZnVsbE5hbWUiOiJCYXl1IFN5YWl0cyIsInVzZXJuYW1lIjoiYmF5dXN5YWl0cyIsInRva2VuIjoiR1J0UE5VSEtZQWNXbEZsYlhoVlh6UGJOZkNIYnl6TUYiLCJwYXNzd29yZCI6IiQyeSQxMCRBTlhVWE1SSllrckZvWmhXS2tFWkJlZi5GVUlqVFBsV0RDVE9HREVNM3lPdTNlNmtnc2JZaSIsInRpbWUiOjE2NjgxMzczNTUsImV4cGlyZWQiOjE2NjgyMjM3NTUsImNsaWVudElkIjoxLCJzaWduYXR1cmUiOiJKV0RQSlFBOFRHQjdBVFFUSkg4Rk9ENDBKRDVGOFgxUyJ9LCJpYXQiOjE2NjgxMzczNTUsImV4cCI6MTY2ODIyMzc1NX0.2p40PEnhUoWkRhb2XnGKGB0vnKdlG8gwubz1-4c6lU4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "X-Signature",
+								"value": "JWDPJQA8TGB7ATQTJH8FOD40JD5F8X1S",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "http://localhost:8003/v1/order?limit=6&currentPage=0&sortBy=id&get=all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8003",
+							"path": [
+								"v1",
+								"order"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "6"
+								},
+								{
+									"key": "currentPage",
+									"value": "0"
+								},
+								{
+									"key": "sortBy",
+									"value": "id"
+								},
+								{
+									"key": "search",
+									"value": "bayu",
+									"disabled": true
+								},
+								{
+									"key": "get",
+									"value": "all"
+								}
+							]
+						},
+						"description": "login user fo"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
