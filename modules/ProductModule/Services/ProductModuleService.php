@@ -22,7 +22,7 @@ class ProductModuleService
         where($condition);
     }
 
-    public static function post($input = [], Request $request)
+    public static function post(Request $request, $input = [])
     {
         $body        = isset($input['value']) ? json_decode($input['value']) : $input;
         $response    = [];
@@ -35,7 +35,7 @@ class ProductModuleService
         }
         return $response;
     }
-    public static function put($input = [], Request $request)
+    public static function put(Request $request, $input = [])
     {
         $body        = isset($input['value']) ? json_decode($input['value']) : $input;
         $response    = [];

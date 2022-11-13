@@ -1,5 +1,16 @@
 <?php
 
+function removeHttp($url)
+{
+	$disallowed = array('http://', 'https://');
+	foreach ($disallowed as $d) {
+		if (strpos($url, $d) === 0) {
+			return str_replace($d, '', $url);
+		}
+	}
+	return $url;
+}
+
 function timeId()
 {
 	date_default_timezone_set('Asia/Jakarta');
@@ -108,28 +119,28 @@ function generateToken($length = null)
 
 function generateRandomNumeric($length = null)
 {
+    $l = $length;
 	if (empty($length)) {
-		$length = 10;
-	} else {
-		$length = $length;
+		$l = 10;
 	}
 	$numeric = '0123456789';
 	$randomString = '';
-	for ($i = 0; $i < $length; $i++) {
+	for ($i = 0; $i < $l; $i++) {
 		$randomString .= $numeric[rand(0, strlen($numeric) - 1)];
 	}
 	return $randomString;
 }
 function generateRandomChar($length = null)
 {
+    $l = null;
 	if (empty($length)) {
-		$length = 10;
+		$l = 10;
 	} else {
-		$length = $length;
+		$l = $length;
 	}
 	$characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	$randomString = '';
-	for ($i = 0; $i < $length; $i++) {
+	for ($i = 0; $i < $l; $i++) {
 		$randomString .= $characters[rand(0, strlen($characters) - 1)];
 	}
 	return $randomString;
@@ -137,20 +148,19 @@ function generateRandomChar($length = null)
 
 function generateRandomCode($length = null)
 {
-	if (empty($length)) {
-		$length = 6;
-	} else {
-		$length = $length;
+    $l = $length;
+	if (empty($l)) {
+		$l = 6;
 	}
 	$characters = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 	$randomString = '';
-	for ($i = 0; $i < $length; $i++) {
+	for ($i = 0; $i < $l; $i++) {
 		$randomString .= $characters[rand(0, strlen($characters) - 1)];
 	}
 	return $randomString;
 }
 function setHTTPResponse($response) {
-	$bool = env('RESPONSE_HTTP', false);
+	$bool = env('RESPONSE_HTTP', true);
 	if (!$bool || empty($response)) {
 		$response = 200;
 	}

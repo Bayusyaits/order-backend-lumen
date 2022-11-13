@@ -47,7 +47,7 @@ class ProductModuleController extends Controller
             return response()->json($validation, setHTTPResponse($validation["code"]));
         }
         try {
-            $action = service("ProductModule", "ProductModuleService")::post($input, $request);
+            $action = service("ProductModule", "ProductModuleService")::post($request, $input);
         } catch (Throwable $e) {
             $message = $e->getMessage();
             return response()->json([
@@ -114,7 +114,7 @@ class ProductModuleController extends Controller
             return response()->json($validation, setHTTPResponse($validation["code"]));
         }
         try {
-            $action = service("ProductModule", "ProductModuleService")::put($input, $request);
+            $action = service("ProductModule", "ProductModuleService")::put($request, $input);
         } catch (Throwable $e) {
             $message = $e->getMessage();
             return response()->json([

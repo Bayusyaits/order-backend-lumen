@@ -17,6 +17,7 @@ class CreateUserClientTable extends Migration
             Schema::create('userClient', function (Blueprint $table) {
                 $table->increments('userClientId');
                 $table->char('userClientSignature', 100)->comment('alphanumeric')->nullable();
+                $table->char('userClientDomain', 50)->comment('domain: localhost:8003')->nullable();
                 $table->string('userClientPlatform')->nullable();
                 $table->ipAddress('userClientIpAddress')->comment('ip address equivalent column.')->nullable();
                 $table->enum('userClientStatus', ['reg', 'act', 'ina'])->comment('registered', 'active', 'inactive')->nullable();

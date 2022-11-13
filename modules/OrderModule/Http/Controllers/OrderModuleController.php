@@ -48,7 +48,7 @@ class OrderModuleController extends Controller
         }
 
         try {
-            $action = service("OrderModule", "OrderModuleService")::post($input, $request);
+            $action = service("OrderModule", "OrderModuleService")::post($request, $input);
         } catch (Throwable $e) {
             $message = $e->getMessage();
             return response()->json([
@@ -115,7 +115,7 @@ class OrderModuleController extends Controller
             return response()->json($validation, setHTTPResponse($validation["code"]));
         }
         try {
-            $action = service("OrderModule", "OrderModuleService")::put($input, $request);
+            $action = service("OrderModule", "OrderModuleService")::put($request, $input);
         } catch (Throwable $e) {
             $message = $e->getMessage();
             return response()->json([

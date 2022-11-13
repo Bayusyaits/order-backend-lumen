@@ -17,6 +17,7 @@ class UserClientModuleService
     public static function get($condition)
     {
         return UserClientEntity::selectRaw('userClientId as id,
+        userClientDomain as domain,
         userClientSignature as signature,userClientStatus as status')->
         where($condition);
     }
@@ -40,6 +41,9 @@ class UserClientModuleService
         try {
             $ott = new UserClientEntity();
             $ott->userClientIpAddress = getClientIp();
+            if (isset($request->domain)) {
+                $ott->userClientDomain = $request->domain;
+            }
             $ott->userClientPlatform  = $request->server('HTTP_USER_AGENT');
             $ott->userClientSignature = generateRandomCode(32);
             $ott->userClientStatus    = isset($body->status) ? $body->status : 'act';

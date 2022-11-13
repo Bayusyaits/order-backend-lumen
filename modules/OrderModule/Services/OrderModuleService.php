@@ -46,7 +46,7 @@ class OrderModuleService
         return $insert;
     }
 
-    public static function post($input = [], Request $request)
+    public static function post(Request $request, $input = [])
     {
         $body        = isset($input['value']) ? json_decode($input['value']) : $input;
         $response    = [];
@@ -67,7 +67,7 @@ class OrderModuleService
         }
         return $response;
     }
-    public static function put($input = [], Request $request)
+    public static function put(Request $request, $input = [])
     {
         $body        = isset($input['value']) ? json_decode($input['value']) : $input;
         $response    = [];

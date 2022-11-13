@@ -103,7 +103,7 @@ class UserModuleController extends Controller
                 return response()->json([
                     "status"  => "ERROR",
                     'code'    => Response::HTTP_NOT_FOUND,
-                    'message' => self::ID_MESSAGE."user not found",
+                    'message' => self::ID_MESSAGE."username tidak ditemukan atau password salah",
                     'data'    => null
                 ], setHTTPResponse(Response::HTTP_NOT_FOUND));
             }
@@ -120,6 +120,7 @@ class UserModuleController extends Controller
                     'code'    => Response::HTTP_OK,
                     'message' => self::ID_MESSAGE.'logged in',
                     'data'    => [
+                        "loggedIn"  => true,
                         "token"     => self::setToken($data),
                         "expired"   => $data->expired
                     ]
@@ -128,7 +129,7 @@ class UserModuleController extends Controller
                 return response()->json([
                     "status"  => "SUCCESS",
                     'code'    => Response::HTTP_FORBIDDEN,
-                    'message' => self::ID_MESSAGE.'fail to logged in',
+                    'message' => self::ID_MESSAGE.'username tidak ditemukan atau password salah',
                     'data'    => null
                 ], setHTTPResponse(Response::HTTP_FORBIDDEN));
             }
