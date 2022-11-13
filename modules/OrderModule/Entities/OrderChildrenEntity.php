@@ -39,14 +39,14 @@ class OrderChildrenEntity extends Model
         parent::__construct();
     }
 
-    public function withItem()
+    public function withItems()
     {
         return $this->hasMany(OrderItemEntity::class, 'orderItemOrderId', 'orderId');
     }
 
-    public function item()
+    public function items()
     {
-        return $this->withItem()->selectRaw('
+        return $this->withItems()->selectRaw('
             orderItemOrderId,
             orderItemId as id,
             orderItemProductCode as productCode,

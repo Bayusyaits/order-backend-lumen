@@ -16,9 +16,9 @@ class OrderModuleService
 {
     public static function hasMany($condition)
     {
-        return OrderChildrenEntity::with('item')->selectRaw('orderId,orderId as id,
+        return OrderChildrenEntity::with('items')->selectRaw('orderId,orderId as id,
         orderCustomerName as customerName, orderTotalWeight as totalWeight,
-        orderTotalQty as totalQty,
+        orderTotalQty as totalQty,orderTransactionDate as transactionDate,
         orderNumber as number,orderTotalCharge as totalCharge')->
         where($condition);
     }
@@ -27,7 +27,7 @@ class OrderModuleService
     {
         return OrderEntity::selectRaw('orderId as id,
         orderCustomerName as customerName, orderTotalWeight as totalWeight,
-        orderTotalQty as totalQty,
+        orderTotalQty as totalQty,orderTransactionDate as transactionDate,
         orderNumber as number,orderTotalCharge as totalCharge')->
         where($condition);
     }
@@ -102,6 +102,9 @@ class OrderModuleService
             DB::beginTransaction();
             try {
                 $ott = new OrderEntity();
+                if (isset($body->transactionDate)) {
+                    $ott->orderTransactionDate = $body->transactionDate;
+                }
                 $ott->orderCustomerName = $body->customerName;
                 $ott->orderTotalWeight = isset($body->totalWeight) ? intVal($body->totalWeight) : 0;
                 $ott->orderTotalCharge = isset($body->totalCharge) ? intVal($body->totalCharge) : 0;
