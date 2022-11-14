@@ -46,7 +46,7 @@ class UserModuleController extends Controller
                 ::get([['userClientIpAddress', '=', getClientIp()]])->first();
             if (!$client) {
                 $client  = service('UserModule', 'UserClientModuleService')
-                ::post(['userClientIpAddress', '=', getClientIp()]);
+                ::post(['userClientIpAddress', '=', getClientIp()], $request);
             }
             $body               = $input;
             $body['clientId']   = $client->id;

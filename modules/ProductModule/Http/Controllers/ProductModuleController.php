@@ -300,7 +300,7 @@ class ProductModuleController extends Controller
             return response()->json([
                 "status"  => "ERROR",
                 'code'    => Response::HTTP_NOT_FOUND,
-                'message' => self::ID_MESSAGE.' data not found',
+                'message' => self::ID_MESSAGE.' product not found',
                 'data'    => null
             ], setHTTPResponse(Response::HTTP_NOT_FOUND));
         }

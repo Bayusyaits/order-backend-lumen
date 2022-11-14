@@ -17,7 +17,7 @@ class CreateProductTable extends Migration
             Schema::create('product', function (Blueprint $table) {
                 $table->bigIncrements('productId');
                 $table->integer('productUserClientId')->comment('id from table user client')->nullable();
-                $table->string('orderProductName')->comment('name: Indomie Rebus')->nullable();
+                $table->string('productName')->comment('name: Indomie Rebus')->nullable();
                 $table->char('productCode', 60)->comment('sku code')->nullable();
                 $table->integer('productPrice')->comment('retailer price')->nullable();
                 $table->smallInteger('productMinOrder')->comment('min order')->default(1);
