@@ -54,7 +54,16 @@ class OrderChildrenEntity extends Model
             orderItemTotalQty as totalQty,
             orderItemOrderId as orderId,
             orderItemPaymentMethod as paymentMethod,
-            orderItemState as state,orderItemTotal as total
-        ');
+            orderItemState as state,orderItemTotal as total,
+            productStock as qty,
+            productName as name,
+            productPrice as price,
+            productWeight as weight
+        ')->join(
+            'product',
+            'product.productCode',
+            '=',
+            'orderItem.orderItemProductCode'
+        );
     }
 }
