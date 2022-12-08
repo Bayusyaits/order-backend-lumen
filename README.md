@@ -1,6 +1,6 @@
 # bayusyaits-lumen
 Lumen 8.0
-Create database db_halodoc, username root and password null
+Create database db_toko, username root and password null
 cp .env.example .env
 php artisan migrate
 composer dump-autoload
